@@ -1,88 +1,120 @@
 package com.example.madrisastudentapp;
 
+import java.util.ArrayList;
+
 public class Student {
-    String Name;
-    String Date;
-    int[] Sabaq; //array of 3 elements, 1st element --> Surah Number, 2nd --> Starting Aya, 3rd --> Ending Aya
-    int Sabaqi; //Previous Parah
-    int Manzil; //From 1st parah till Sabqi
-    String sabaqComments;
-    String sabaqiComments;
-    String manzilComments;
-
-    public Student(String Name, String Date, int[] Sabaq, int Sabaqi, int Manzil, String sabaqComments, String sabaqiComments, String manzilComments){
-        this.Date = Date;
-        this.Name = Name;
-        this.Manzil = Manzil;
-        this.manzilComments = manzilComments;
-        this.Sabaq = Sabaq;
-        this.sabaqComments = sabaqComments;
-        this.Sabaqi = Sabaqi;
-        this.sabaqiComments = sabaqiComments;
+    public int getId() {
+        return id;
     }
 
-    public String getDate() {
-        return Date;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setDate(String date) {
-        Date = date;
+    public class Data {
+        String date;
+        String manzil;
+        String sabaq;
+        String sabqi;
+
+
+        public Data(String date, String manzil, String sabaq, String sabqi) {
+            this.date = date;
+            this.manzil = manzil;
+            this.sabaq = sabaq;
+            this.sabqi = sabqi;
+        }
+
+        @Override
+        public String toString() {
+            return
+                    "date='" + date + '\'' +
+                            ",\n manzil='" + manzil + '\'' +
+                            ",\n sabaq='" + sabaq + '\'' +
+                            ",\n sabqi='" + sabqi + '\'' +
+                            "\n"
+                    ;
+        }
+
+        public String getDate() {
+            return date;
+        }
+
+        public void setDate(String date) {
+            this.date = date;
+        }
+
+        public String getManzil() {
+            return manzil;
+        }
+
+        public void setManzil(String manzil) {
+            this.manzil = manzil;
+        }
+
+        public String getSabaq() {
+            return sabaq;
+        }
+
+        public void setSabaq(String sabaq) {
+            this.sabaq = sabaq;
+        }
+
+        public String getSabqi() {
+            return sabqi;
+        }
+
+        public void setSabqi(String sabqi) {
+            this.sabqi = sabqi;
+        }
     }
+
+    int id;
+    String name;
+    int image;
+    ArrayList<Data> studentData;
+
+    public Student(String name, int image, int id) {
+        this.name = name;
+        this.image = image;
+        this.id = id;
+        this.studentData = new ArrayList<Data>();
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", image=" + image +
+                '}';
+    }
+    public ArrayList<Data> getData() {return studentData;}
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int[] getSabaq() {
-        return Sabaq;
+    public int getImage() {
+        return image;
     }
 
-    public void setSabaq(int[] Sabaq) {
-        this.Sabaq = Sabaq;
+    public void setImage(int image) {
+        this.image = image;
     }
 
-    public int getSabaqi() {
-        return Sabaqi;
+    public ArrayList<Data> getStudentData() {
+        return studentData;
     }
 
-    public void setSabaqi(int Sabaqi) {
-        this.Sabaqi = Sabaqi;
+    public void setStudentData(ArrayList<Data> studentData) {
+        this.studentData = studentData;
     }
 
-    public int getManzil() {
-        return Manzil;
+    public void addData(String date, String manzil, String sabaq, String sabqi) {
+        this.studentData.add(new Data(date, manzil, sabaq, sabqi));
     }
-
-    public void setManzil(int Manzil) {
-        this.Manzil = Manzil;
-    }
-
-    public String getmanzilComments() {
-        return manzilComments;
-    }
-
-    public void setmanzilComments(String manzilComments) {
-        this.manzilComments = manzilComments;
-    }
-
-    public String getsabaqComments() {
-        return sabaqComments;
-    }
-
-    public void setsabaqComments(String sabaqComments) {
-        this.sabaqComments = sabaqComments;
-    }
-
-    public String getsabaqiComments() {
-        return sabaqiComments;
-    }
-
-    public void setsabaqiComments(String sabaqiComments) {
-        this.sabaqiComments = sabaqiComments;
-    }
-
 }
