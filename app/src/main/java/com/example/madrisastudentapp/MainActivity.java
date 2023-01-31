@@ -34,22 +34,22 @@ public class MainActivity extends AppCompatActivity {
 
         add = findViewById(R.id.floatingActionButton);
         DBHandler db = new DBHandler(this);
-//        db.UpdateTables();
-//        Student s0 = new Student("Ghufran", R.drawable.person_24, 0);
-//        Student s1 = new Student("Me", R.drawable.person_24, 1);
-//        Student s2 = new Student("You", R.drawable.person_24, 2);
-//        Student s3 = new Student("Nerd", R.drawable.person_24, 3);
-//        Student s4 = new Student("Nerdiest", R.drawable.person_24, 4);
-//        Student s5 = new Student("Looking Cool?", R.drawable.person_24, 5);
-//
-//        db.insertStudent(s0);
-//        db.insertStudent(s1);
-//        db.insertStudent(s2);
-//        db.insertStudent(s3);
-//        db.insertStudent(s4);
-//        db.insertStudent(s5);
+        db.UpdateTables();
+        Student s0 = new Student("Ghufran", R.drawable.person_24, 0);
+        Student s1 = new Student("Me", R.drawable.person_24, 1);
+        Student s2 = new Student("You", R.drawable.person_24, 2);
+        Student s3 = new Student("Nerd", R.drawable.person_24, 3);
+        Student s4 = new Student("Nerdiest", R.drawable.person_24, 4);
+        Student s5 = new Student("Looking Cool?", R.drawable.person_24, 5);
 
-//        DBHandler db = new DBHandler(this);
+        db.insertStudent(s0);
+        db.insertStudent(s1);
+        db.insertStudent(s2);
+        db.insertStudent(s3);
+        db.insertStudent(s4);
+        db.insertStudent(s5);
+
+        DBHandler db = new DBHandler(this);
         studentList.addAll(db.getStudents());
 
         recyclerView = findViewById(R.id.recyclerView);

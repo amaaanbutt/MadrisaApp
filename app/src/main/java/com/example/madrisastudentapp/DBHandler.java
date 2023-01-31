@@ -93,7 +93,7 @@ public class DBHandler extends SQLiteOpenHelper {
             do {
                 @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
                 @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
-                students.add(new Student(name, R.drawable.person_24, id));
+                students.add(new Student(name, id));
             } while (cursor.moveToNext());
         }
 
@@ -128,10 +128,10 @@ public class DBHandler extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()) {
             do {
-                String date = cursor.getString(cursor.getColumnIndex(SDD_COLUMN_DATE));
-                String manzil = cursor.getString(cursor.getColumnIndex(SDD_COLUMN_MANZIL));
-                String sabaq = cursor.getString(cursor.getColumnIndex(SDD_COLUMN_SABAQ));
-                String sabqi = cursor.getString(cursor.getColumnIndex(SDD_COLUMN_SABQI));
+                @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(SDD_COLUMN_DATE));
+                @SuppressLint("Range") String manzil = cursor.getString(cursor.getColumnIndex(SDD_COLUMN_MANZIL));
+                @SuppressLint("Range") String sabaq = cursor.getString(cursor.getColumnIndex(SDD_COLUMN_SABAQ));
+                @SuppressLint("Range") String sabqi = cursor.getString(cursor.getColumnIndex(SDD_COLUMN_SABQI));
 
                 std.addData(date, manzil, sabaq, sabqi);
             } while (cursor.moveToNext());
